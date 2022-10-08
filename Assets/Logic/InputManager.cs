@@ -20,19 +20,19 @@ public class InputManager :Singleton<InputManager>
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("space");
+            // Debug.Log("space");
             _space.OnNext(Unit.Default);
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            Debug.Log("R");
+            // Debug.Log("R");
             _right.OnNext(Unit.Default);
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            Debug.Log("L");
+            // Debug.Log("L");
             _left.OnNext(Unit.Default);
         }
 

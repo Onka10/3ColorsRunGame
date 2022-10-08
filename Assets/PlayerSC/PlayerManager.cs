@@ -1,22 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
+using UniRx.Triggers;
+using System;
+
+public interface IPlayer
+{
+    void GameOver();
+}
+
 
 namespace Player
 {
-    public class PlayerManager : MonoBehaviour
+    public class PlayerManager : MonoBehaviour,IPlayer
     {
         public bool IsMove;
-        // Start is called before the first frame update
+        [SerializeField] Collider collider;
         
         void Start()
         {
+            collider.OnTriggerEnterAsObservable()
+            .Throttle(TimeSpan.FromMilliseconds(10))
+            .Subscribe(x =>{
+                if(x.gameObject.TryGetComponent<ICoin>(out var coin))  coin.Get();
+            })
+            .AddTo(this);   
+
+            IsMove = true;
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-            
+        public void GameOver(){
+            Destroy(this.gameObject);
         }
     }
 }
