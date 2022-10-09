@@ -11,7 +11,6 @@ public class DeadColider : MonoBehaviour
         void Start()
         {
             collider.OnTriggerEnterAsObservable()
-            .Throttle(TimeSpan.FromMilliseconds(10))
             .Subscribe(x =>{
                 if(x.gameObject.TryGetComponent<IPlayer>(out var player))  player.GameOver();
             })
