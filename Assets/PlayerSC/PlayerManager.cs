@@ -43,6 +43,10 @@ namespace Player
             .Subscribe(c => ColorChange(c))
             .AddTo(this);
 
+            InputManager.I.OnR
+            .Subscribe(_ => Miss())
+            .AddTo(this);
+
             IsMove = true;
         }
 
