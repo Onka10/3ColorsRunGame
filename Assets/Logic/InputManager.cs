@@ -15,6 +15,9 @@ public class InputManager :Singleton<InputManager>
     public IObservable<Unit> OnLeft => _left;
     private readonly Subject<Unit> _left = new Subject<Unit>();
 
+    public IObservable<Unit> OnR => _r;
+    private readonly Subject<Unit> _r = new Subject<Unit>();
+
     // Update is called once per frame
     void Update()
     {
@@ -34,6 +37,12 @@ public class InputManager :Singleton<InputManager>
         {
             // Debug.Log("L");
             _left.OnNext(Unit.Default);
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            // Debug.Log("L");
+            _r.OnNext(Unit.Default);
         }
 
     }
