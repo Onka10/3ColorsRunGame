@@ -4,7 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObject/BlockMaterials")]
 public class BlockMaterial : ScriptableObject
 {
-    [SerializeField] public Materials Red;
+    public Materials Red => _red;
+    [SerializeField] private Materials _red;
     [SerializeField] public Materials Green;
     [SerializeField] public Materials Blue;
 
