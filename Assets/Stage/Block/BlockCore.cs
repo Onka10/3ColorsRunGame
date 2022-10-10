@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEditor;
 using UniRx;
 
-[ExecuteInEditMode]
 public class BlockCore : MonoBehaviour
 {
     [SerializeField] ColorState color = ColorState.Red;
