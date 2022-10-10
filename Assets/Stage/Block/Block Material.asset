@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74c832cb1c0b21c44a145659b1319ec2, type: 3}
   m_Name: Block Material
   m_EditorClassIdentifier: 
-  Red:
+  _red:
     On: {fileID: 2100000, guid: 67be33659cbb0564db367d953b981873, type: 2}
     Off: {fileID: 2100000, guid: 74719270fa3450148aef6535630b4e0a, type: 2}
   Green:

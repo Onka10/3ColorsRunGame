@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using UniRx;
 
+[ExecuteInEditMode]
 public class BlockCore : MonoBehaviour
 {
     [SerializeField] ColorState color = ColorState.Red;
@@ -46,5 +47,11 @@ public class BlockCore : MonoBehaviour
         else if(color == ColorState.Green) selected = _material.Green;
         ON = selected.On;
         OFF = selected.Off;
+        mesh.material = OFF;
+    }
+
+    // [ContextMenu("更新")]
+    public void Do(){
+        SetMesh();
     }
 }
