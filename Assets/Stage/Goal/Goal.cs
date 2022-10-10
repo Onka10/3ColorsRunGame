@@ -4,14 +4,14 @@ using UnityEngine;
 using UniRx;
 using UniRx.Triggers;
 
+[RequireComponent(typeof(Collider))]
 public class Goal : MonoBehaviour
 {
-    [SerializeField] Collider collider;
     [SerializeField] GameObject fireworks;
 
     void Start()
     {
-        collider.OnTriggerExitAsObservable()
+        this.gameObject.GetComponent<Collider>().OnTriggerEnterAsObservable()
         .Subscribe(x =>{
             if(x.gameObject.TryGetComponent<IPlayer>(out var player)){
                 player.Clear();
@@ -20,6 +20,8 @@ public class Goal : MonoBehaviour
             }  
             
         })
-        .AddTo(this); 
+        .AddTo(this);
+
+        ZKeep.Z(transform.root.gameObject);
     }    
 }
