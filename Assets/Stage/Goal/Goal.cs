@@ -11,7 +11,7 @@ public class Goal : MonoBehaviour
 
     void Start()
     {
-        this.gameObject.GetComponent<Collider>().OnTriggerEnterAsObservable()
+        this.gameObject.GetComponent<Collider>().OnTriggerExitAsObservable()
         .Subscribe(x =>{
             if(x.gameObject.TryGetComponent<IPlayer>(out var player)){
                 player.Clear();

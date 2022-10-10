@@ -7,7 +7,7 @@ using System;
 
 public interface IPlayer
 {
-    void GameOver();
+    void Miss();
 
     void Clear();
 }
@@ -18,7 +18,6 @@ namespace Player
     public class PlayerManager : Singleton<PlayerManager>,IPlayer
     {
         public bool IsMove;
-        [SerializeField] Collider collider;
 
         [SerializeField] Vector3 Respawn = new Vector3(0,1,0);
 
@@ -32,7 +31,8 @@ namespace Player
         
         void Start()
         {
-            collider.OnTriggerEnterAsObservable()
+            this.gameObject.GetComponent<Collider>()
+            .OnTriggerEnterAsObservable()
             .Throttle(TimeSpan.FromMilliseconds(10))
             .Subscribe(x =>{
                 if(x.gameObject.TryGetComponent<ICoin>(out var coin))  coin.Get();
@@ -52,7 +52,7 @@ namespace Player
             else if(c==ColorState.Green) mesh.material = green;
         }
 
-        public void GameOver(){
+        public void Miss(){
             // Destroy(this.gameObject);
             this.gameObject.transform.position = Respawn;
         }
