@@ -9,6 +9,11 @@ public interface ICoin
 
 public class Coin : MonoBehaviour,ICoin
 {
+    void Start()
+    {
+        ZKeep.Z(this.gameObject);
+    }
+
     public void Get(){
         ScoreManager.I.AddScore();
         Destroy(this.gameObject);
