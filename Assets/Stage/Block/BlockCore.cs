@@ -1,20 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using UniRx;
 
 public class BlockCore : MonoBehaviour
 {
-    [SerializeField] ColorState color;
-    [SerializeField] Material ON;
-    [SerializeField] Material OFF;
+    [SerializeField] ColorState color = ColorState.Red;
+    [SerializeField] private BlockMaterial _material = null;
+    Material ON;
+    Material OFF;
 
     //キャッシュ
-    [SerializeField] MeshRenderer mesh;
+    MeshRenderer mesh;
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        SetMesh();
+
         ColorManager.I.OnColorStates
         .Subscribe(c => MoveStage(c))
         .AddTo(this);
@@ -31,8 +35,16 @@ public class BlockCore : MonoBehaviour
             mesh.material = OFF;
             pos.z = 2;
         } 
-
-        
         this.gameObject.transform.position = pos;
+    }
+
+    void SetMesh(){
+        mesh = this.gameObject.GetComponent<MeshRenderer>();
+        Materials selected;
+        selected = _material.Blue;
+        if(color == ColorState.Red) selected = _material.Red;
+        else if(color == ColorState.Green) selected = _material.Green;
+        ON = selected.On;
+        OFF = selected.Off;
     }
 }

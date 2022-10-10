@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74c832cb1c0b21c44a145659b1319ec2, type: 3}
+  m_Name: Block Material
+  m_EditorClassIdentifier: 
+  Red:
+    On: {fileID: 2100000, guid: 67be33659cbb0564db367d953b981873, type: 2}
+    Off: {fileID: 2100000, guid: 74719270fa3450148aef6535630b4e0a, type: 2}
+  Green:
+    On: {fileID: 2100000, guid: 226ef1cab5ee7ac45bb77d3be971ed81, type: 2}
+    Off: {fileID: 2100000, guid: eb2b786d51ffb154db455127470d5c84, type: 2}
+  Blue:
+    On: {fileID: 2100000, guid: f99bfcc099663e94a89bc8c8b976ead6, type: 2}
+    Off: {fileID: 2100000, guid: af136c479c4fc4346bbe7534fe43aa60, type: 2}

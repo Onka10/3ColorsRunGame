@@ -10,7 +10,7 @@ public class DeadColider : MonoBehaviour
     {
         this.gameObject.GetComponent<Collider>().OnTriggerEnterAsObservable()
         .Subscribe(x =>{
-            if(x.gameObject.TryGetComponent<IPlayer>(out var player))  player.GameOver();
+            if(x.gameObject.TryGetComponent<IPlayer>(out var player))  player.Miss();
         })
         .AddTo(this);   
         ZKeep.Z(this.gameObject);
