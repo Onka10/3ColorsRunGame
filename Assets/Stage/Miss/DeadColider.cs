@@ -3,17 +3,16 @@ using UniRx;
 using UniRx.Triggers;
 using System;
 
-
+[RequireComponent(typeof(Collider))]
 public class DeadColider : MonoBehaviour
 {
-        [SerializeField] Collider collider;
-
-        void Start()
-        {
-            collider.OnTriggerEnterAsObservable()
-            .Subscribe(x =>{
-                if(x.gameObject.TryGetComponent<IPlayer>(out var player))  player.GameOver();
-            })
-            .AddTo(this);   
-        }
+    void Start()
+    {
+        this.gameObject.GetComponent<Collider>().OnTriggerEnterAsObservable()
+        .Subscribe(x =>{
+            if(x.gameObject.TryGetComponent<IPlayer>(out var player))  player.GameOver();
+        })
+        .AddTo(this);   
+        ZKeep.Z(this.gameObject);
+    }
 }

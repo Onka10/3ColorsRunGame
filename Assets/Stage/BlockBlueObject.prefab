@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 131927159021270555}
   - component: {fileID: 131927159021270552}
   m_Layer: 0
-  m_Name: Blue
+  m_Name: BlockBlueObject
   m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
