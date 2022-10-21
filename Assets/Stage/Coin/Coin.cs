@@ -11,7 +11,7 @@ public class Coin : MonoBehaviour,ICoin
 {
     void Start()
     {
-        ZKeep.Z(this.gameObject);
+        ZKeep.Z0(this.gameObject);
     }
 
     public void Get(){

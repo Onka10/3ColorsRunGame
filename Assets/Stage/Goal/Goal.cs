@@ -7,21 +7,18 @@ using UniRx.Triggers;
 [RequireComponent(typeof(Collider))]
 public class Goal : MonoBehaviour
 {
-    [SerializeField] GameObject fireworks;
-
     void Start()
     {
         this.gameObject.GetComponent<Collider>().OnTriggerExitAsObservable()
         .Subscribe(x =>{
             if(x.gameObject.TryGetComponent<IPlayer>(out var player)){
                 player.Clear();
-                Instantiate(fireworks,this.gameObject.transform.position,Quaternion.identity);
                 Destroy(this.gameObject);
             }  
             
         })
         .AddTo(this);
 
-        ZKeep.Z(transform.root.gameObject);
+        ZKeep.Z0(transform.root.gameObject);
     }    
 }

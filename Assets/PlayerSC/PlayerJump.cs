@@ -21,7 +21,6 @@ namespace Player
                 .Subscribe(_ => Jump())
                 .AddTo(this);
 
-            // Playerと衝突したら、Playerは死亡する
             this.OnCollisionEnterAsObservable()
                 .Select(hit => hit.gameObject.tag)
                 .Where(tag => tag == "wall")

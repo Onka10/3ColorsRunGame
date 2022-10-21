@@ -4,16 +4,16 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObject/BlockMaterials")]
 public class BlockMaterial : ScriptableObject
 {
-    public Materials Red => _red;
-    [SerializeField] private Materials _red;
-    [SerializeField] public Materials Green;
-    [SerializeField] public Materials Blue;
+    public BlockMaterials Red => _red;
+    [SerializeField] private BlockMaterials _red;
+    [SerializeField] public BlockMaterials Green;
+    [SerializeField] public BlockMaterials Blue;
 
 }
 
 
 [System.Serializable]
-public struct Materials
+public struct BlockMaterials
 {
 
     [SerializeField] public Material On;

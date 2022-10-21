@@ -12,6 +12,6 @@ public class ScoreView : MonoBehaviour
 
         ScoreManager.I.Score
         .Subscribe(s => score.text = s.ToString())
-        .AddTo(this);    
+        .AddTo(this);  
     }
 }
