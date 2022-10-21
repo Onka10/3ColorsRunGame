@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: player
   m_EditorClassIdentifier: 
   jumpPower: 1000
-  speed: 6.57
+  speed: 3.5
