@@ -40,7 +40,7 @@ public class BlockCore : MonoBehaviour
 
     void SetMesh(){
         mesh = this.gameObject.GetComponent<MeshRenderer>();
-        Materials selected;
+        BlockMaterials selected;
         selected = _material.Blue;
         if(color == ColorState.Red) selected = _material.Red;
         else if(color == ColorState.Green) selected = _material.Green;
