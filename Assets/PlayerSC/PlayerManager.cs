@@ -84,6 +84,7 @@ namespace Player
         void ReStart(){
             _play.OnNext(Unit.Default);
             gameObject.transform.position = RespawnPoint;
+            ScoreManager.I.Reset();
             IsMove = true;
         }
 
@@ -91,7 +92,7 @@ namespace Player
         {
             IsMove = false;
             GameObject fire = Instantiate(fireworks, gameObject.transform.position, Quaternion.identity);
-            ZKeep.Z0(fire);
+            PositionMove.Z0(fire);
             GoalEffect.I.ClearText();
         }
     }

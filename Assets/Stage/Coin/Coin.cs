@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Player;
+using UniRx;
 
 public interface ICoin
 {
@@ -9,13 +11,24 @@ public interface ICoin
 
 public class Coin : MonoBehaviour,ICoin
 {
+    PlayerManager manager;
+
     void Start()
     {
-        ZKeep.Z0(this.gameObject);
+        manager = PlayerManager.I;
+        manager.OnPlay
+        .Subscribe(_ => Play())
+        .AddTo(this);
+
+        PositionMove.Z0(this.gameObject);
     }
 
     public void Get(){
         ScoreManager.I.AddScore();
-        Destroy(this.gameObject);
+        PositionMove.ZBack(this.gameObject);
+    }
+
+    void Play(){
+        PositionMove.Z0(this.gameObject);
     }
 }

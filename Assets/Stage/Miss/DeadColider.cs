@@ -13,6 +13,6 @@ public class DeadColider : MonoBehaviour
             if(x.gameObject.TryGetComponent<IPlayer>(out var player))  player.Miss();
         })
         .AddTo(this);   
-        ZKeep.Z0(this.gameObject);
+        PositionMove.Z0(this.gameObject);
     }
 }
