@@ -19,6 +19,6 @@ public class PlayerCamera : MonoBehaviour
     void MoveCamera()
     {
         //横方向だけ追従
-        transform.position = new Vector3(playerTransform.position.x, transform.position.y, transform.position.z);
+        transform.position = new Vector3(playerTransform.position.x+2f, transform.position.y, transform.position.z);
     }
 }

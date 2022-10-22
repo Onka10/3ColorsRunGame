@@ -10,4 +10,8 @@ public class ScoreManager : Singleton<ScoreManager>
     public void AddScore(){
         _score.Value += 1;
     }
+
+    public void Reset(){
+        _score.Value = 0;
+    }
 }

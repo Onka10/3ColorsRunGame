@@ -34,7 +34,7 @@ namespace Player
         void Miss(){
             mesh.enabled = false;
             GameObject miss = Instantiate(manager.NowMaterial.Value.Death, gameObject.transform.position, Quaternion.identity);
-            ZKeep.Z0(miss);
+            PositionMove.Z0(miss);
         }
 
         void Play(){

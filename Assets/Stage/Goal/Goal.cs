@@ -19,6 +19,6 @@ public class Goal : MonoBehaviour
         })
         .AddTo(this);
 
-        ZKeep.Z0(transform.root.gameObject);
+        PositionMove.Z0(transform.root.gameObject);
     }    
 }
