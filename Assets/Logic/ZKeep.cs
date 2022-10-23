@@ -18,10 +18,4 @@ public static class PositionMove
         pos.z = -15;
         obj.transform.position = pos; 
     }
-
-    public static void YDown(GameObject obj){
-        Vector3 pos = obj.transform.position;
-        pos.y = -10;
-        obj.transform.position = pos; 
-    }
 }

@@ -10,8 +10,8 @@ public class BlockCore : MonoBehaviour
     [SerializeField] private BlockMaterial _material = null;
     Material ON;
     Material OFF;
-    [SerializeField] Collider missCollider;
-    [SerializeField] Collider missCollider2;
+    Collider thisCollider;
+    Collider[] childColiders = new Collider[3];
 
     //キャッシュ
     MeshRenderer mesh;
@@ -19,6 +19,12 @@ public class BlockCore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
+        thisCollider = GetComponent<Collider>();
+        var children = this.gameObject.transform.childCount;
+        for (var i = 0; i < children; ++i)
+        {
+            childColiders[i] = this.gameObject.transform.GetChild(i).GetComponent<Collider>();
+        }
         SetMesh();
 
         ColorManager.I.OnColorStates
@@ -31,15 +37,21 @@ public class BlockCore : MonoBehaviour
         if(color == c){
             pos.z = 0;
             mesh.material = ON;
-            missCollider.enabled = true;
-            missCollider2.enabled = true;
+            thisCollider.enabled = true;
+            for (var i = 0; i < childColiders.Length; i++)
+            {
+                childColiders[i].enabled = true;
+            }
             
         }        
         else{
             pos.z = 2;
             mesh.material = OFF;
-            missCollider.enabled = false;
-            missCollider2.enabled = false;
+            thisCollider.enabled = false;
+            for (var i = 0; i < childColiders.Length; i++)
+            {
+                childColiders[i].enabled = false;
+            }
         } 
         this.gameObject.transform.position = pos;
     }
