@@ -10,6 +10,8 @@ public class BlockCore : MonoBehaviour
     [SerializeField] private BlockMaterial _material = null;
     Material ON;
     Material OFF;
+    [SerializeField] Collider missCollider;
+    [SerializeField] Collider missCollider2;
 
     //キャッシュ
     MeshRenderer mesh;
@@ -28,12 +30,16 @@ public class BlockCore : MonoBehaviour
         Vector3 pos = this.gameObject.transform.position;
         if(color == c){
             pos.z = 0;
-            mesh.material = ON; 
+            mesh.material = ON;
+            missCollider.enabled = true;
+            missCollider2.enabled = true;
             
         }        
         else{
-            mesh.material = OFF;
             pos.z = 2;
+            mesh.material = OFF;
+            missCollider.enabled = false;
+            missCollider2.enabled = false;
         } 
         this.gameObject.transform.position = pos;
     }

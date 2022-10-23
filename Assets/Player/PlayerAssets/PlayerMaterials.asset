@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e02b361e865a66d4c9c427651e56b445, type: 3}
-  m_Name: New Player Materials
+  m_Name: PlayerMaterials
   m_EditorClassIdentifier: 
   Red:
     Player: {fileID: 2100000, guid: 929ace72b3a89494e8893b77b55ffd62, type: 2}

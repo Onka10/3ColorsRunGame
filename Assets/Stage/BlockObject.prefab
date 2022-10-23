@@ -51,6 +51,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: 2
   _material: {fileID: 11400000, guid: 0a1fef8ebcc29e24286769c67142c095, type: 2}
+  missCollider: {fileID: 7295845175042726366}
+  missCollider2: {fileID: 9074878888404227349}
 --- !u!33 &131927159021270554
 MeshFilter:
   m_ObjectHideFlags: 0
