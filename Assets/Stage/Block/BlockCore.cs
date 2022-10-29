@@ -12,6 +12,7 @@ public class BlockCore : MonoBehaviour
     Material OFF;
     Collider thisCollider;
     Collider[] childColiders = new Collider[3];
+    Tilling till;
 
     //キャッシュ
     MeshRenderer mesh;
@@ -30,6 +31,9 @@ public class BlockCore : MonoBehaviour
         ColorManager.I.OnColorStates
         .Subscribe(c => MoveStage(c))
         .AddTo(this);
+
+        till = this.gameObject.GetComponent<Tilling>();
+        till?.SetTill();
     }
 
     void MoveStage(ColorState c){
@@ -42,6 +46,7 @@ public class BlockCore : MonoBehaviour
             {
                 childColiders[i].enabled = true;
             }
+            till?.SetTill();
             
         }        
         else{
@@ -52,6 +57,7 @@ public class BlockCore : MonoBehaviour
             {
                 childColiders[i].enabled = false;
             }
+            till?.SetTill();
         } 
         this.gameObject.transform.position = pos;
     }
