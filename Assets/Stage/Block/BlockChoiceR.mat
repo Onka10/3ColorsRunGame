@@ -92,6 +92,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - TilingX: 1
+    - TilingY: 1
     - Vector1_ad9a70fdf55d41fa8aec65308323d16e: 2.52
     - _AlphaClip: 0
     - _Blend: 0
