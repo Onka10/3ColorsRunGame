@@ -64,6 +64,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 100bd9addc79b7b40936451afa6850fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderer: {fileID: 131927159021270555}
+  transform: {fileID: 131927159021270550}
   x: 0
   y: 0
 --- !u!33 &131927159021270554
@@ -126,8 +128,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.095798135, z: 1.0951385}
-  m_Center: {x: 0, y: 0.45210093, z: -0.047569275}
+  m_Size: {x: 1, y: 0.03, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &2592709062478298441
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,8 +173,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.32341576, y: 0.34360874, z: 0.2835955}
-  m_Center: {x: 0.0030851364, y: -0.02233529, z: 0.010199279}
+  m_Size: {x: 0.95, y: 0.95, z: 0.9}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7839558242593304810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,8 +230,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.016885757, y: 0.632684, z: 0.9498882}
-  m_Center: {x: -0.49155712, y: -0.015805006, z: 0.000044927}
+  m_Size: {x: 0.01, y: 0.95, z: 1}
+  m_Center: {x: -0.495, y: 0, z: 0}
 --- !u!114 &2830189246837992894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,5 +286,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.07918009, z: 1}
-  m_Center: {x: 0, y: -0.46040994, z: 0}
+  m_Size: {x: 1, y: 0.01, z: 1}
+  m_Center: {x: 0, y: -0.5, z: 0}
