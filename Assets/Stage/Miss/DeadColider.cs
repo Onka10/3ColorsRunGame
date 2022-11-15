@@ -12,8 +12,6 @@ public class DeadColider : MonoBehaviour
         .Subscribe(x =>{
             if(x.gameObject.TryGetComponent<IPlayer>(out var player))  player.Miss();
         })
-        .AddTo(this);   
-
-        PositionMove.Z0(this.gameObject);
+        .AddTo(this);
     }
 }
