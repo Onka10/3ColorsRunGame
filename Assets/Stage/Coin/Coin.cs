@@ -19,8 +19,6 @@ public class Coin : MonoBehaviour,ICoin
         manager.OnPlay
         .Subscribe(_ => Play())
         .AddTo(this);
-
-        PositionMove.Z0(this.gameObject);
     }
 
     public void Get(){

@@ -29,6 +29,7 @@ public class ColorManager : Singleton<ColorManager>
 
     void ColorChange(int i)
     {
+        SEManager.I.CC();
         if (i > 0)
         {
             if (ColorStates.Value == ColorState.Red) ColorStates.Value = ColorState.Blue;

@@ -4,16 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 public class GoalEffect : Singleton<GoalEffect>
 {
-    [SerializeField] Text obj;
-
-    void Start(){
-        obj = gameObject.GetComponent<Text>();
-        obj.enabled = false;
-    }
+    [SerializeField] GameObject obj;
+    [SerializeField] Text text;
+    [SerializeField] Text onegai;
 
     public void ClearText(){
-        obj.enabled = true;
-        obj.text = ScoreManager.I.Score.Value.ToString();
-        
+        obj.SetActive(true);
+        onegai.enabled = false;
+        StartCoroutine("Go");
+        text.text = ScoreManager.I.Score.Value.ToString();
+    }
+
+    IEnumerator Go()
+    {
+        yield return new WaitForSeconds(1);
+        onegai.enabled =true;
     }
 }
+    
+ 
