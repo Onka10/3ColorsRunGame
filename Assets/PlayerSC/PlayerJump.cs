@@ -35,6 +35,7 @@ namespace Player
         {
             if (jumpNow == true) return;
 
+            SEManager.I.Jump();
             rBody.AddForce(transform.up * jumpPower, ForceMode.Impulse);
             jumpNow = true;
             

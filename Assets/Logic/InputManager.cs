@@ -41,7 +41,6 @@ public class InputManager :Singleton<InputManager>
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            // Debug.Log("L");
             _r.OnNext(Unit.Default);
         }
 
