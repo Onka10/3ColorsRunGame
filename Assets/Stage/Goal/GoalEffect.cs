@@ -21,5 +21,3 @@ public class GoalEffect : Singleton<GoalEffect>
         onegai.enabled =true;
     }
 }
-    
- 
